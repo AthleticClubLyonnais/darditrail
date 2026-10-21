@@ -728,7 +728,7 @@ D.posts.forEach(p=>{
 });
 const POL=L.divIcon({className:"mk",iconSize:[32,34],iconAnchor:[16,17],popupAnchor:[0,-14],
  html:'<svg width="32" height="34" viewBox="0 0 32 34"><path d="M16 1.5L29 6v10c0 8-5.5 13.5-13 16.5C8.5 29.500 3 24 3 16V6Z" fill="#1f6fd1" stroke="#fff" stroke-width="2"/><path d="M16 8l2.200 4.700 5.100.600-3.800 3.500 1 5.100L16 19.300l-4.500 2.600 1-5.100-3.800-3.500 5.100-.6Z" fill="#fff"/></svg>'});
-D.pm.forEach((q,i)=>L.marker([q.lat,q.lon],{icon:POL,title:"Police municipale"}).bindPopup("<b>Police municipale</b><br>Présence à confirmer (demande d'intervention).").addTo(groups["Police municipale"]));
+D.pm.forEach((q,i)=>L.marker([q.lat,q.lon],{icon:POL,title:"Police municipale"}).bindPopup("<b>Police municipale</b><br>Police municipale prévue (demande d'intervention).").addTo(groups["Police municipale"]));
 // ravitaillements (positions : waypoint « Ravitaillement » du GPX ; Aqueduc = barrières d'entrée/sortie ; Fort = entrée du fort, à ajuster)
 const RAV=[
  {n:"Ravito Beffe",lat:45.800982,lon:4.729657,c:"#0a9396",t:"6 jerricans + 2 d'avance",d:"Les coureurs arrivent d'un coup : ce n'est ni le lieu ni le moment de ralentir le flux."},
@@ -758,4 +758,4 @@ const mb=document.createElement("button");mb.className="f off";mb.style.setPrope
 mb.onclick=()=>{const on=map.hasLayer(matG);on?map.removeLayer(matG):matG.addTo(map);mb.classList.toggle("off",on)};bar.appendChild(mb);
 bar.appendChild(sel);
 const lg=L.control({position:"bottomleft"});lg.onAdd=()=>{const d=L.DomUtil.create("div","lg");d.innerHTML="<span style=\'color:#111;font-weight:700\'>■ noir : 25 km</span> · <span style=\'color:#00a0cc;font-weight:700\'>■ cyan : 15 km</span> · <span style=\'color:#5aa500;font-weight:700\'>■ vert : 7 km</span> (tracés superposés sur les portions communes)<br>Symbole plein : poste complet · creux : signaleur(s) manquant(s)<br>Tracés v2.7 · positions du GPX « carte organisation »";return d};lg.addTo(map);
-</script><a href="index.html" style="position:fixed;right:10px;bottom:34px;z-index:1000;background:#007175;color:#fff;text-decoration:none;font:700 15px system-ui;padding:9px 13px;border-radius:8px;box-shadow:0 1px 4px #0006">← Espace bénévoles</a></body></html>
+</script><a href="index.html" style="position:fixed;right:10px;bottom:34px;z-index:1000;background:#007175;color:#fff;text-decoration:none;font:700 15px system-ui;padding:9px 13px;border-radius:8px;box-shadow:0 1px 4px #0006">← Espace bénévoles</a><span style="position:fixed;right:10px;bottom:78px;z-index:1000;background:#C24323;color:#fff;font:700 17px system-ui;padding:8px 14px;border-radius:999px;border:2px solid #fff;box-shadow:0 1px 4px #0006">Version 1.0</span></body></html>

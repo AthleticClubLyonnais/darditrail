@@ -709,7 +709,7 @@ const allPts=[];
 const zg={};Z().forEach(z=>zg[z.id]=L.layerGroup().addTo(map));
 function Z(){return D.Z}
 function pop(z){return '<div class="pop"><h4>'+esc(z.n)+' · '+esc(z.len)+'</h4><p><b>'+esc(z.pk)+'</b></p><p>'+esc(z.d)+'</p>'+
-  (z.team.length?'<p>Samedi 16:00-18:00, RDV 15:30 à l\'Aqueduc<br>'+z.team.map(m=>esc(m.n)+(m.ok==="À confirmer"?" <i>(à confirmer)</i>":"")).join("<br>")+'</p><p>Coordination : Wil</p>':'<p>Personne pour l\'instant.</p>')+'</div>'}
+  (z.team.length?'<p>Samedi 16:00-18:00, RDV 15:30 à l\'Aqueduc<br>'+z.team.map(m=>esc(m.n)).join("<br>")+'</p>':'<p>Personne pour l\'instant.</p>')+'</div>'}
 D.seg25.forEach(s=>{const z=D.Z[s.z];s.pts.forEach(p=>allPts.push(p));
   L.polyline(s.pts,{pane:"cas",color:"#fff",weight:18,opacity:.95,lineCap:"butt",interactive:false}).addTo(zg[z.id]);
   L.polyline(s.pts,{pane:"zn",color:z.c,weight:12,opacity:.95,lineCap:"butt",dashArray:null}).bindPopup(pop(z),{maxWidth:320}).addTo(zg[z.id])});
@@ -729,5 +729,5 @@ D.Z.forEach(z=>{const b=document.createElement("button");b.className="f";b.style
   b.innerHTML='<span style="display:inline-block;width:22px;height:8px;background:'+z.c+';border-radius:3px"></span>'+esc(z.n)+' · '+esc(z.pk)+(z.team.length?' ('+z.team.length+')':'');
   b.onclick=()=>{const on=map.hasLayer(zg[z.id]);on?map.removeLayer(zg[z.id]):zg[z.id].addTo(map);b.classList.toggle("off",on)};bar.appendChild(b)});
 bar.appendChild(sel);
-const lg=L.control({position:"bottomleft"});lg.onAdd=()=>{const d=L.DomUtil.create("div","lg");d.innerHTML="Trait épais : 25 km · trait fin : sections propres aux 15 et 7 km<br>Samedi 24/10 · RDV 15:30 Aqueduc · balisage 16:00-18:00 · coordination Wil";return d};lg.addTo(map);
-</script><a href="index.html" style="position:fixed;right:10px;bottom:34px;z-index:1000;background:#007175;color:#fff;text-decoration:none;font:700 15px system-ui;padding:9px 13px;border-radius:8px;box-shadow:0 1px 4px #0006">← Espace bénévoles</a></body></html>
+const lg=L.control({position:"bottomleft"});lg.onAdd=()=>{const d=L.DomUtil.create("div","lg");d.innerHTML="Trait épais : 25 km · trait fin : sections propres aux 15 et 7 km<br>Samedi 24/10 · RDV 15:30 Aqueduc · balisage 16:00-18:00";return d};lg.addTo(map);
+</script><a href="index.html" style="position:fixed;right:10px;bottom:34px;z-index:1000;background:#007175;color:#fff;text-decoration:none;font:700 15px system-ui;padding:9px 13px;border-radius:8px;box-shadow:0 1px 4px #0006">← Espace bénévoles</a><span style="position:fixed;right:10px;bottom:78px;z-index:1000;background:#C24323;color:#fff;font:700 17px system-ui;padding:8px 14px;border-radius:999px;border:2px solid #fff;box-shadow:0 1px 4px #0006">Version 1.0</span></body></html>
