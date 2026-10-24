@@ -26,6 +26,7 @@ h1,h2,h3,.bc{font-family:BC,'Arial Narrow',sans-serif;text-transform:uppercase;l
 .card{border:3px solid var(--teal);border-radius:16px;overflow:hidden;background:#fff}
 .card>h2{background:var(--teal);color:#fff;font-size:26px;padding:8px 18px}
 .card .b{padding:18px 20px}
+.top2{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:22px;align-items:start}.top2 .card{margin:0}.side{display:grid;gap:22px;align-content:start}.side .card{margin:0}.card.photos>h2,.card.covoit>h2{background:var(--orange);display:flex;align-items:center;gap:10px}.card.photos>h2 .ico,.card.covoit>h2 .ico{width:30px;height:30px;flex:none;background:#fff;border-radius:50%;padding:4px}.card.covoit>h2{background:var(--teal)}.card.covoit>h2 .ico{background:transparent;padding:0;border-radius:0}@media(max-width:860px){.top2{grid-template-columns:minmax(0,1fr)}}
 .welcome p{margin-bottom:12px}
 .sign{font-weight:600;color:var(--teal)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:26px}
